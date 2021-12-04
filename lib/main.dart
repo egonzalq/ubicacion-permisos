@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:misiontic_template/presentation/app.dart';
+import 'package:misiontic_template/ui/app.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

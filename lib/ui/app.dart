@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:misiontic_template/domain/use_case/controllers/location.dart';
+import 'package:misiontic_template/domain/use_case/controllers/permissions.dart';
 import 'package:misiontic_template/domain/use_case/controllers/theme_controller.dart';
+import 'package:misiontic_template/domain/use_case/permission_management.dart';
 import 'package:misiontic_template/domain/use_case/theme_management.dart';
-import 'package:misiontic_template/presentation/pages/stateless/stateless_page.dart';
-import 'package:misiontic_template/presentation/theme/theme.dart';
+import 'package:misiontic_template/ui/pages/stateful/gps_page.dart';
+import 'package:misiontic_template/ui/theme/theme.dart';
 
 class App extends StatefulWidget {
   const App({Key? key}) : super(key: key);
@@ -29,6 +32,10 @@ class _AppState extends State<App> {
     ever(controller.reactiveDarkMode, (bool isDarkMode) {
       manager.changeTheme(isDarkMode: isDarkMode);
     });
+    PermissionsController permissionsController =
+        Get.put(PermissionsController());
+    permissionsController.permissionManager = PermissionManager();
+    Get.lazyPut(() => LocationController());
     initializeTheme();
     super.initState();
   }
@@ -42,7 +49,7 @@ class _AppState extends State<App> {
             theme: MyTheme.ligthTheme,
             darkTheme: MyTheme.darkTheme,
             themeMode: ThemeMode.system,
-            home: StatelessList(),
+            home: GpsPage(),
           );
   }
 }
