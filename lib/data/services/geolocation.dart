@@ -4,6 +4,7 @@ import 'package:misiontic_template/domain/services/location.dart';
 class GpsService implements LocationInterface {
   @override
   Future<Position> getCurrentLocation() async {
-    return await Geolocator.getCurrentPosition();
+    // TODO Usando el paquete Geolocator obtenga la posicion actual
+    /* return await Geolocator.getCurrentPosition(); */
   }
 }

@@ -37,13 +37,15 @@ class _State extends State<GpsScreen> {
               padding: const EdgeInsets.only(top: 16.0),
               child: ElevatedButton(
                 onPressed: () async {
-                  locationController.location.value = null;
+                  // TODO Verifica que tienes los permisos y luego obten la ubicacion
+                  // Almacenala y tambien muestra un snackbar con los datos
+                  /* locationController.location.value = null;
                   if (permissionsController.locationGranted) {
                     final position = await manager.getCurrentLocation();
                     locationController.location.value = position;
                     Get.snackbar('Tu ubicación es...',
                         'Latitud ${position.latitude} - Longitud: ${position.longitude}');
-                  }
+                  } */
                 },
                 child: const Text('Obtener Ubicacion'),
               ),
@@ -58,10 +60,12 @@ class _State extends State<GpsScreen> {
                 () => ElevatedButton(
                   onPressed: locationController.location.value != null
                       ? () async {
-                          final location = locationController.location.value;
+                          // TODO con los datos de ubicacion almacenados construye un enlace a Google Maps
+                          // y lanzalo
+                          /* final location = locationController.location.value;
                           final url =
                               "https://www.google.es/maps?q=${location?.latitude},${location?.longitude}";
-                          await launch(url);
+                          await launch(url); */
                         }
                       : null,
                   child: const Text('Abrir Maps'),
