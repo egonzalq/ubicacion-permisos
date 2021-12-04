@@ -6,6 +6,5 @@ class LocationManager {
 
   Future<Position> getCurrentLocation() async {
     // TODO Retorna la ubicacion actual
-    /* return await gpsService.getCurrentLocation(); */
   }
 }

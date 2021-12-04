@@ -39,13 +39,6 @@ class _State extends State<GpsScreen> {
                 onPressed: () async {
                   // TODO Verifica que tienes los permisos y luego obten la ubicacion
                   // Almacenala y tambien muestra un snackbar con los datos
-                  /* locationController.location.value = null;
-                  if (permissionsController.locationGranted) {
-                    final position = await manager.getCurrentLocation();
-                    locationController.location.value = position;
-                    Get.snackbar('Tu ubicación es...',
-                        'Latitud ${position.latitude} - Longitud: ${position.longitude}');
-                  } */
                 },
                 child: const Text('Obtener Ubicacion'),
               ),
@@ -62,10 +55,6 @@ class _State extends State<GpsScreen> {
                       ? () async {
                           // TODO con los datos de ubicacion almacenados construye un enlace a Google Maps
                           // y lanzalo
-                          /* final location = locationController.location.value;
-                          final url =
-                              "https://www.google.es/maps?q=${location?.latitude},${location?.longitude}";
-                          await launch(url); */
                         }
                       : null,
                   child: const Text('Abrir Maps'),
